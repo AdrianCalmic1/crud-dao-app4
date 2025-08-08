@@ -10,45 +10,60 @@ import pixel.academy.crud_app.entity.Student;
 @SpringBootApplication
 public class CrudAppApplication {
 
-		public static void main(String[] args) {
+	public static void main(String[] args) {
 		SpringApplication.run(CrudAppApplication.class, args);
-	    }
+	}
 
 
+	@Bean
+	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 
-     @Bean
-     public CommandLineRunner commandLineRunner(StudentDAO studentDAO)  {
+		return runner -> {
+			//createStudent(studentDAO);
+			//createMultipleStudents(studentDAO);
 
-		 return runner -> {
-			 //createStudent(studentDAO);
-			 createMultipleStudents(studentDAO);
-		 };
+		};
 
-	 }
-	 private void createStudent(StudentDAO studentDAO) {
+	}
 
-			// cream un obiect Student
-		 System.out.println("Creating new student object ...");
-		 Student newStudent = new Student("Jhon", "Doe", "jhon@pixelacademy.md");
+	private void createStudent(StudentDAO studentDAO) {
 
-		 	// salvam obiectul Student in baza de date folosind DAO
-		 System.out.println("Saving the student ...");
-		 studentDAO.save(newStudent);
+		// cream un obiect Student
+		System.out.println("Creating new student object ...");
+		Student newStudent = new Student("Jhon", "Doe", "jhon@pixelacademy.md");
 
-		 	// afisam ID-ul studentului salvat
-		 System.out.println("Saved student. Generated id:"  + newStudent.getId());
-	 }
-	 private void createMultipleStudents(StudentDAO studentDAO) {
-			//cream mai multi studenti
-		 System.out.println("Creating 3 students object ...");
-		 Student newStudent1 = new Student("Andrei", "Munteanu", "andrei@pixelacademy.md");
-		 Student newStudent2 = new Student("Iulian", "Vataman", "iulic@pixelacademy.md");
-		 Student newStudent3 = new Student("Maria", "Mirabela", "mira@pixelacademy.md");
+		// salvam obiectul Student in baza de date folosind DAO
+		System.out.println("Saving the student ...");
+		studentDAO.save(newStudent);
 
-	 	//Salvam obiectele student in baza de date
-		 System.out.println("Saving the student ...");
-		 studentDAO.save(newStudent1);
-		 studentDAO.save(newStudent2);
-		 studentDAO.save(newStudent3);
-}
+		// afisam ID-ul studentului salvat
+		System.out.println("Saved student. Generated id:" + newStudent.getId());
+	}
+
+	private void createMultipleStudents(StudentDAO studentDAO) {
+		//cream mai multi studenti
+		System.out.println("Creating 3 students object ...");
+		Student newStudent1 = new Student("Andrei", "Munteanu", "andrei@pixelacademy.md");
+		Student newStudent2 = new Student("Iulian", "Vataman", "iulic@pixelacademy.md");
+		Student newStudent3 = new Student("Maria", "Mirabela", "mira@pixelacademy.md");
+
+		//Salvam obiectele student in baza de date
+		System.out.println("Saving the student ...");
+		studentDAO.save(newStudent1);
+		studentDAO.save(newStudent2);
+		studentDAO.save(newStudent3);
+	}
+
+	private void readStundet(StudentDAO studentDAO) {
+
+		// creeaza un obiect de tip Student
+
+		// salveaza studentul in baza de date
+
+		// afiseaza id-ul studentului salvat
+
+		// recupereaza studentul pe baza ID-ului (PK)
+
+		// afiseaza detaliile studentului
+	}
 }
