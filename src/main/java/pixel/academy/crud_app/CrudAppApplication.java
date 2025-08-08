@@ -20,7 +20,9 @@ public class CrudAppApplication {
 
 		return runner -> {
 			//createStudent(studentDAO);
-			//createMultipleStudents(studentDAO);
+		//	createMultipleStudents(studentDAO);
+
+			readStundet(studentDAO);
 
 		};
 
@@ -70,8 +72,10 @@ public class CrudAppApplication {
 
 		// recupereaza studentul pe baza ID-ului (PK)
 		System.out.println("Retrieving student with id:" + theId);
+		Student myStudent = studentDAO.findById(theId);
 
 		// afiseaza detaliile studentului
+		String Student;
 		System.out.println("Found the student: " + myStudent);
 	}
 }

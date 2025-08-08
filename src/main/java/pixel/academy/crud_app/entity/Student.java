@@ -71,7 +71,7 @@ public String toString() {
             "id=" + id +
             ",firstName='" + firstName + '\''  +
             ",lastName='"  + lastName   + '\'' +
-            ", email='" + email + '\'' +
+            ", email='"    + email + '\'' +
             '}';
 }
 }
