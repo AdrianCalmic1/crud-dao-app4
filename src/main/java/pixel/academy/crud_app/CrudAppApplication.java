@@ -20,9 +20,9 @@ public class CrudAppApplication {
 
 		return runner -> {
 			//createStudent(studentDAO);
-		//	createMultipleStudents(studentDAO);
+			  createMultipleStudents(studentDAO);
 
-			readStundet(studentDAO);
+			//readStundet(studentDAO);
 
 		};
 
@@ -32,7 +32,7 @@ public class CrudAppApplication {
 
 		// cream un obiect Student
 		System.out.println("Creating new student object ...");
-		Student newStudent = new Student("Jhon", "Doe", "jhon@pixelacademy.md");
+		Student newStudent = new Student("Ilie", "Fhen", "Ilie@pixelacademy.md");
 
 		// salvam obiectul Student in baza de date folosind DAO
 		System.out.println("Saving the student ...");
@@ -48,12 +48,14 @@ public class CrudAppApplication {
 		Student newStudent1 = new Student("Andrei", "Munteanu", "andrei@pixelacademy.md");
 		Student newStudent2 = new Student("Iulian", "Vataman", "iulic@pixelacademy.md");
 		Student newStudent3 = new Student("Maria", "Mirabela", "mira@pixelacademy.md");
+		Student newStudent4 = new Student("Ilie", "Fhen", "ilie@pixelacademy.md");
 
 		//Salvam obiectele student in baza de date
 		System.out.println("Saving the student ...");
 		studentDAO.save(newStudent1);
 		studentDAO.save(newStudent2);
 		studentDAO.save(newStudent3);
+		studentDAO.save(newStudent4);
 	}
 
 	private void readStundet(StudentDAO studentDAO) {
