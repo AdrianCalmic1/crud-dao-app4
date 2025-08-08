@@ -20,9 +20,9 @@ public class CrudAppApplication {
 
 		return runner -> {
 			//createStudent(studentDAO);
-			  createMultipleStudents(studentDAO);
+			//createMultipleStudents(studentDAO);
 
-			//readStundet(studentDAO);
+			readStundet(studentDAO);
 
 		};
 
@@ -51,6 +51,7 @@ public class CrudAppApplication {
 		Student newStudent4 = new Student("Ilie", "Fhen", "ilie@pixelacademy.md");
 
 		//Salvam obiectele student in baza de date
+
 		System.out.println("Saving the student ...");
 		studentDAO.save(newStudent1);
 		studentDAO.save(newStudent2);
